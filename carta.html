@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestro Aniversario ❤️</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+color:white;
+text-align:center;
+overflow-x:hidden;
+background: radial-gradient(circle at top,#1b0033,#000);
+}
+
+/* fondo estrellas */
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background:transparent;
+z-index:-1;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.2}
+to{opacity:1}
+}
+
+/* pantalla bloqueo */
+#login{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+}
+
+.lock{
+font-size:70px;
+cursor:pointer;
+margin:20px;
+transition:transform 0.3s;
+}
+
+.lock:hover{
+transform:scale(1.2);
+}
+
+input{
+padding:12px;
+border-radius:10px;
+border:none;
+width:220px;
+margin-top:10px;
+text-align:center;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:#ff4d88;
+color:white;
+margin-top:10px;
+cursor:pointer;
+}
+
+/* contenido */
+#contenido{
+display:none;
+padding:25px;
+}
+
+h1{
+font-size:32px;
+}
+
+.contador{
+font-size:22px;
+margin:30px auto;
+max-width:500px;
+background:rgba(255,255,255,0.1);
+padding:15px;
+border-radius:15px;
+}
+
+.carta{
+background:white;
+color:#333;
+padding:25px;
+border-radius:20px;
+max-width:700px;
+margin:20px auto;
+line-height:1.6;
+}
+
+img{
+width:90%;
+max-width:260px;
+border-radius:15px;
+margin:10px;
+}
+
+.galeria{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.heart{
+position:fixed;
+top:-10px;
+color:#ff4d6d;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+ to{transform:translateY(100vh);} 
+}
+
+@media (max-width:600px){
+
+h1{
+font-size:26px;
+}
+
+.carta{
+padding:18px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div id="login">
+
+<h2>💌 Tengo una sorpresa para ti mi princesa hermosa</h2>
+<p>Toca el candado y pon la contraseña</p>
+
+<div class="lock" onclick="mostrarInput()">🖤🔒❤️</div>
+
+<div id="passBox" style="display:none">
+<input type="password" id="pass" placeholder="contraseña">
+<br>
+<button onclick="checkPass()">Entrar</button>
+</div>
+
+</div>
+
+<div id="contenido">
+
+<h1>🖤11❤️Feliz Aniversario🖤11❤️</h1>
+
+<div class="contador">
+Llevamos juntos:<br>
+<span id="tiempo"></span>
+</div>
+
+<div class="carta">
+<h2>Una carta para ti 💕</h2>
+
+<p>
+Hoy quiero detener el tiempo por un momento para decirte algo que a veces siento que las palabras no alcanzan a explicar. Desde que llegaste a mi vida, todo empezó a tener un color diferente. Cada día contigo se volvió más especial, más bonito y más lleno de sentido.
+A tu lado aprendí que el amor no solo se dice, también se vive en los pequeños momentos: en una sonrisa, en una conversación, en una mirada que dice más que mil palabras. Contigo he compartido risas, sueños, recuerdos y momentos que guardo en el corazón como si fueran tesoros.
+Me encanta pensar en todo lo que hemos vivido juntos, en cada recuerdo que poco a poco fue construyendo nuestra historia. Y lo más bonito de todo es saber que aún nos quedan muchos momentos más por vivir, muchas risas por compartir y muchos sueños por cumplir.
+Tú eres una de las razones por las que mi corazón se siente feliz, porque contigo aprendí que el amor verdadero se siente tranquilo, sincero y lleno de vida. Gracias por ser parte de mi mundo, por tu cariño, por tu paciencia y por cada instante que hemos compartido.
+Hoy celebramos nuestro aniversario, pero para mí también es una celebración de todo lo que eres y de lo importante que te has vuelto para mí. Espero que este sea solo uno de los muchos capítulos hermosos que escribiremos juntos.
+Te amo muchísimo, más de lo que a veces puedo explicar con palabras. Y si algo tengo claro, es que cada día a tu lado es un regalo que valoro con todo mi corazón. 🖤♾️❤️
+
+</p>
+
+<p>
+Gracias por cada risa, cada abrazo y cada momento
+que hemos compartido. Espero que este sea solo
+uno de muchos aniversarios más.
+</p>
+
+<p>
+Te amo infinitamente y te amaré por siempre y en la eternidad 🖤🫶❤️♾️
+</p>
+
+</div>
+
+<h2>Nuestros recuerdos 📸</h2>
+
+<div class="galeria">
+<img src="foto1.jpeg">
+<img src="foto2.jpeg">
+<img src="foto3.jpeg">
+<img src="foto4.jpeg">
+<img src="foto5.jpeg">
+<img src="foto6.jpeg">
+<img src="foto7.jpeg">
+<img src="foto8.jpeg">
+<img src="foto9.jpeg">
+<img src="foto10.jpeg">
+<img src="foto12.jpeg">
+</div>
+
+
+<script>
+
+function mostrarInput(){
+ document.getElementById("passBox").style.display="block";
+}
+
+function checkPass(){
+
+const password="150425";
+const input=document.getElementById("pass").value;
+
+if(input===password){
+
+ document.getElementById("login").style.display="none";
+ document.getElementById("contenido").style.display="block";
+
+}else{
+ alert("Contraseña incorrecta 💔");
+}
+
+}
+
+/* contador */
+
+const inicio = new Date("2025-04-15");
+
+function actualizarContador(){
+
+const ahora = new Date();
+const diferencia = ahora - inicio;
+
+const dias = Math.floor(diferencia/(1000*60*60*24));
+const horas = Math.floor((diferencia/(1000*60*60))%24);
+const minutos = Math.floor((diferencia/(1000*60))%60);
+
+ document.getElementById("tiempo").innerHTML=
+ dias+" días "+horas+" horas "+minutos+" minutos";
+
+}
+
+setInterval(actualizarContador,1000);
+
+/* corazones */
+
+function crearCorazon(){
+
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="🖤♾️❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+10)+"px";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+
+ document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+}
+
+setInterval(crearCorazon,400);
+
+/* estrellas */
+
+const starsContainer=document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+const star=document.createElement("div");
+star.classList.add("star");
+
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+
+starsContainer.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>
